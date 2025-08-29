@@ -1,45 +1,31 @@
-/*  your css code here. If applicable */
 body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #9b59b6; /* purple background */
   font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  text-align: center;
-  padding: 20px;
-}
-
-h1 {
-  margin-bottom: 20px;
 }
 
 #buttons {
   display: flex;
-  justify-content: center;
+  gap: 20px;
   flex-wrap: wrap;
-  gap: 10px;
+  justify-content: center;
 }
 
 .btn, .stop {
-  padding: 12px 20px;
+  background: #5e2a84; /* darker purple for buttons */
+  color: white;
   border: none;
-  border-radius: 8px;
+  padding: 15px 25px;
+  font-size: 18px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
-.btn {
-  background: #3498db;
-  color: white;
-}
-
-.btn:hover {
-  background: #2980b9;
-}
-
-.stop {
-  background: #e74c3c;
-  color: white;
-}
-
-.stop:hover {
-  background: #c0392b;
+.btn:hover, .stop:hover {
+  background: #451d63;
 }

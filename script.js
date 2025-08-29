@@ -1,9 +1,9 @@
-//your JS code here. If required.
-const sounds = ["sound1", "sound2", "sound3", "sound4"];
+// List of sounds
+const sounds = ["applause", "boo", "gasp", "tada", "victory", "wrong"];
 
-const buttonsContainer = document.getElementById("buttons");
+const buttons = document.getElementById("buttons");
 
-// Generate buttons dynamically
+// Create buttons dynamically
 sounds.forEach((sound) => {
   const btn = document.createElement("button");
   btn.classList.add("btn");
@@ -11,27 +11,26 @@ sounds.forEach((sound) => {
 
   btn.addEventListener("click", () => {
     stopSounds();
-    const audio = document.getElementById(sound);
-    audio.play();
+    document.getElementById(sound).play();
   });
 
-  buttonsContainer.appendChild(btn);
+  buttons.appendChild(btn);
 
-  // Create hidden audio elements
   const audio = document.createElement("audio");
   audio.src = `sounds/${sound}.mp3`;
   audio.id = sound;
-  buttonsContainer.appendChild(audio);
+  buttons.appendChild(audio);
 });
 
-// Stop button
+// Add stop button
 const stopBtn = document.createElement("button");
 stopBtn.classList.add("stop");
-stopBtn.innerText = "Stop";
-stopBtn.addEventListener("click", stopSounds);
-buttonsContainer.appendChild(stopBtn);
+stopBtn.innerText = "stop";
 
-// Function to stop all sounds
+stopBtn.addEventListener("click", stopSounds);
+buttons.appendChild(stopBtn);
+
+// Function to stop sounds
 function stopSounds() {
   sounds.forEach((sound) => {
     const audio = document.getElementById(sound);
